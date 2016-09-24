@@ -9,6 +9,11 @@ import scrapy
 
 
 class JobCrawlerItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    city = scrapy.Field()
+    category = scrapy.Field()
+    description = scrapy.Field()
+    level = scrapy.Field()
+    publicated = scrapy.Field()
+    headline = scrapy.Field()
+    company = scrapy.Field()
+    # active = scrapy.Field()
