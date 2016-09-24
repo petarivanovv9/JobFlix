@@ -138,6 +138,7 @@ ENV/
 
 # env folder
 app_env/
+crwlr_env/
 
 # db file
 db.sqlite3
