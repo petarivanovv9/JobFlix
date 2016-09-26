@@ -19,8 +19,8 @@ services:
     volumes:
       - ~/.docker-volumes/gryphon/neo4j/data:/data
 
-  gryphon:
-    build: .
+  api:
+    build: ./api
     depends_on:
       - neo4j
       - elasticsearch
@@ -28,8 +28,8 @@ services:
       - elasticsearch
       - neo4j
     volumes:
-      - .:/gryphon_api
+      - ./api:/gryphon_api
     ports:
       - '3000:3000'
     env_file:
-      - api.env
+      - ./api/api.env

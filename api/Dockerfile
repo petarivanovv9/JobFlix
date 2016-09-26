@@ -17,7 +17,5 @@ COPY . .
 
 VOLUME ["$INSTALL_PATH/public"]
 
-COPY start_puma /usr/local/bin
-
 # CMD bundle exec puma -c config/puma.rb
-CMD ["bash", "./start_puma"]
+CMD bash ./start_puma
