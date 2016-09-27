@@ -50,5 +50,6 @@ for job in jobs:
     job['busy'] = BUSY_FULL
     job['type'] = TYPE_PERM
     job['level'] = LEVEL_EXPRTS
+    
     print(job)
     print(50 * '<>')

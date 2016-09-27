@@ -1251,4 +1251,93 @@ no changes added to commit (use "git add" and/or "git commit -a")
 [1m[7m%[27m[1m[0m                                                                                                                                                ]2;petar-ivanov@petar-ivanov: ~/Projects/New-Gryphon/Gryphon/scripts]1;..yphon/scripts[0m[27m[24m[J(gryphon_env) ╭─[1m[32mpetar-ivanov@petar-ivanov[00m [1m[34m ~/Projects/New-Gryphon/Gryphon/scripts[00m [31m‹2.3.1›[00m [33m‹init-rails-neo4j*› [00m[00m
 ╰─[1m$[0m [K[?1h=ggit add .[?1l>
 ]2;git add .]1;git[1m[7m%[27m[1m[0m                                                                                                                                                ]2;petar-ivanov@petar-ivanov: ~/Projects/New-Gryphon/Gryphon/scripts]1;..yphon/scripts[0m[27m[24m[J(gryphon_env) ╭─[1m[32mpetar-ivanov@petar-ivanov[00m [1m[34m ~/Projects/New-Gryphon/Gryphon/scripts[00m [31m‹2.3.1›[00m [33m‹init-rails-neo4j*› [00m[00m
-╰─[1m$[0m [K[
+╰─[1m$[0m [K[?1h=ggit commit        g  ...[?1l>
+]2;..]1;..[1m[7m%[27m[1m[0m                                                                                                                                                ]2;petar-ivanov@petar-ivanov: ~/Projects/New-Gryphon/Gryphon]1;..yphon/Gryphon[0m[27m[24m[J(gryphon_env) ╭─[1m[32mpetar-ivanov@petar-ivanov[00m [1m[34m ~/Projects/New-Gryphon/Gryphon[00m [31m‹2.3.1›[00m [33m‹init-rails-neo4j*› [00m[00m
+╰─[1m$[0m [K[?1h=ggit add .[?1l>
+]2;git add .]1;git[1m[7m%[27m[1m[0m                                                                                                                                                ]2;petar-ivanov@petar-ivanov: ~/Projects/New-Gryphon/Gryphon]1;..yphon/Gryphon[0m[27m[24m[J(gryphon_env) ╭─[1m[32mpetar-ivanov@petar-ivanov[00m [1m[34m ~/Projects/New-Gryphon/Gryphon[00m [31m‹2.3.1›[00m [33m‹init-rails-neo4j*› [00m[00m
+╰─[1m$[0m [K[?1h=ggit commit -m ""A"d"d" "2" "f"o"r"m"a"t"e"d" "j"o"b"s" "r"e"a"d"y" "t"o" "b"e" "p"" p"u"s"h"e"d" "i"o"" n" "d"b"."[1C                                               g  [?1l>
+[1m[7m%[27m[1m[0m                                                                                                                                                ]2;petar-ivanov@petar-ivanov: ~/Projects/New-Gryphon/Gryphon]1;..yphon/Gryphon[0m[27m[24m[J(gryphon_env) ╭─[1m[32mpetar-ivanov@petar-ivanov[00m [1m[34m ~/Projects/New-Gryphon/Gryphon[00m [31m‹2.3.1›[00m [33m‹init-rails-neo4j*› [00m[00m
+╰─[1m$[0m [K[?1h=ggit add .gitignore[1m [0m[0m [?1l>
+]2;git add .gitignore]1;git[1m[7m%[27m[1m[0m                                                                                                                                                ]2;petar-ivanov@petar-ivanov: ~/Projects/New-Gryphon/Gryphon]1;..yphon/Gryphon[0m[27m[24m[J(gryphon_env) ╭─[1m[32mpetar-ivanov@petar-ivanov[00m [1m[34m ~/Projects/New-Gryphon/Gryphon[00m [31m‹2.3.1›[00m [33m‹init-rails-neo4j*› [00m[00m
+╰─[1m$[0m [K[?1h=ggit commit -m ""A"d"d" "t"y"p"e"s"c"r"i"p"t" "t"o" "g"i"t"i"g"n"o"r"e"."[?1l>
+]2;git commit -m "Add typescript to gitignore."]1;git[init-rails-neo4j 2dc02ae] Add typescript to gitignore.
+ 3 files changed, 1303 insertions(+), 1 deletion(-)
+ create mode 100644 typescript
+[1m[7m%[27m[1m[0m                                                                                                                                                ]2;petar-ivanov@petar-ivanov: ~/Projects/New-Gryphon/Gryphon]1;..yphon/Gryphon[0m[27m[24m[J(gryphon_env) ╭─[1m[32mpetar-ivanov@petar-ivanov[00m [1m[34m ~/Projects/New-Gryphon/Gryphon[00m [31m‹2.3.1›[00m [33m‹init-rails-neo4j› [00m[00m
+╰─[1m$[0m [K[?1h=ggit add .[?1l>
+]2;git add .]1;git[1m[7m%[27m[1m[0m                                                                                                                                                ]2;petar-ivanov@petar-ivanov: ~/Projects/New-Gryphon/Gryphon]1;..yphon/Gryphon[0m[27m[24m[J(gryphon_env) ╭─[1m[32mpetar-ivanov@petar-ivanov[00m [1m[34m ~/Projects/New-Gryphon/Gryphon[00m [31m‹2.3.1›[00m [33m‹init-rails-neo4j› [00m[00m
+╰─[1m$[0m [K[?1h=git add .commit -m "Add typescript to gitignore."[40Dadd .[24P[9C                          [26D[9D         [9Dgitignore[14Dcommit -m "Add typescript to gitignore."" " " " " " " " " " " " " " " " " " " " " " " " " " " d"d" "2" "j"o"" " f"o"r"m"a"t"e"d" "j"o"b"w" "" " s" "r"e"a"d"y" "t"o" "b"e" "p"u"s"h"e"d" "t"o" "h"" t"h"e" "d"a"" b"."[?1l>
+]2;git commit -m "Add 2 formated jobs ready to be pushed to the db."]1;gitOn branch init-rails-neo4j
+Your branch is ahead of 'origin/init-rails-neo4j' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+	[31mmodified:   typescript[m
+
+no changes added to commit
+[1m[7m%[27m[1m[0m                                                                                                                                                ]2;petar-ivanov@petar-ivanov: ~/Projects/New-Gryphon/Gryphon]1;..yphon/Gryphon[0m[27m[24m[J(gryphon_env) ╭─[1m[32mpetar-ivanov@petar-ivanov[00m [1m[34m ~/Projects/New-Gryphon/Gryphon[00m [31m‹2.3.1›[00m [33m‹init-rails-neo4j*› [00m[00m
+╰─[1m$[0m [K[136C[31m1 ↵[00m[139D[?1h=ggit status[?1l>
+]2;git status]1;gitOn branch init-rails-neo4j
+Your branch is ahead of 'origin/init-rails-neo4j' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   typescript[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[1m[7m%[27m[1m[0m                                                                                                                                                ]2;petar-ivanov@petar-ivanov: ~/Projects/New-Gryphon/Gryphon]1;..yphon/Gryphon[0m[27m[24m[J(gryphon_env) ╭─[1m[32mpetar-ivanov@petar-ivanov[00m [1m[34m ~/Projects/New-Gryphon/Gryphon[00m [31m‹2.3.1›[00m [33m‹init-rails-neo4j*› [00m[00m
+╰─[1m$[0m [K[?1h=[H[2J[0m[27m[24m[J(gryphon_env) ╭─[1m[32mpetar-ivanov@petar-ivanov[00m [1m[34m ~/Projects/New-Gryphon/Gryphon[00m [31m‹2.3.1›[00m [33m‹init-rails-neo4j*› [00m[00m
+╰─[1m$[0m [Kgit statuscommit -m "Add 2 formated jobs ready to be pushed to the db."[61Dadd .                                                        [56Dcommit -m "Add typescript to gitignore."[40Dadd .[24P[9C                          [26D[9D         [9D[9D..       git add .status[10Dpython pull_jobs_in_neo4j.py[28Dgit push origin init-rails-neo4j[?1l>
+]2;git push origin init-rails-neo4j]1;gitCounting objects: 14, done.
+Delta compression using up to 8 threads.
+Compressing objects:  20% (1/5)   Compressing objects:  40% (2/5)   Compressing objects:  60% (3/5)   Compressing objects:  80% (4/5)   Compressing objects: 100% (5/5)   Compressing objects: 100% (5/5), done.
+Writing objects:  16% (1/6)   Writing objects:  33% (2/6)   Writing objects:  50% (3/6)   Writing objects:  66% (4/6)   Writing objects:  83% (5/6)   Writing objects: 100% (6/6)   Writing objects: 100% (6/6), 15.75 KiB | 0 bytes/s, done.
+Total 6 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/1)   [Kremote: Resolving deltas: 100% (1/1)   [Kremote: Resolving deltas: 100% (1/1), completed with 1 local objects.[K
+To git@github.com:pepincho/Gryphon.git
+   c2b3381..2dc02ae  init-rails-neo4j -> init-rails-neo4j
+[1m[7m%[27m[1m[0m                                                                                                                                                ]2;petar-ivanov@petar-ivanov: ~/Projects/New-Gryphon/Gryphon]1;..yphon/Gryphon[0m[27m[24m[J(gryphon_env) ╭─[1m[32mpetar-ivanov@petar-ivanov[00m [1m[34m ~/Projects/New-Gryphon/Gryphon[00m [31m‹2.3.1›[00m [33m‹init-rails-neo4j*› [00m[00m
+╰─[1m$[0m [K[?1h=[H[2J[0m[27m[24m[J(gryphon_env) ╭─[1m[32mpetar-ivanov@petar-ivanov[00m [1m[34m ~/Projects/New-Gryphon/Gryphon[00m [31m‹2.3.1›[00m [33m‹init-rails-neo4j*› [00m[00m
+╰─[1m$[0m [Kggit stau tus[?1l>
+]2;git status]1;gitOn branch init-rails-neo4j
+Your branch is up-to-date with 'origin/init-rails-neo4j'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   typescript[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[1m[7m%[27m[1m[0m                                                                                                                                                ]2;petar-ivanov@petar-ivanov: ~/Projects/New-Gryphon/Gryphon]1;..yphon/Gryphon[0m[27m[24m[J(gryphon_env) ╭─[1m[32mpetar-ivanov@petar-ivanov[00m [1m[34m ~/Projects/New-Gryphon/Gryphon[00m [31m‹2.3.1›[00m [33m‹init-rails-neo4j*› [00m[00m
+╰─[1m$[0m [K[?1h=ggit reset[?1l>
+]2;git reset]1;gitUnstaged changes after reset:
+M	typescript
+[1m[7m%[27m[1m[0m                                                                                                                                                ]2;petar-ivanov@petar-ivanov: ~/Projects/New-Gryphon/Gryphon]1;..yphon/Gryphon[0m[27m[24m[J(gryphon_env) ╭─[1m[32mpetar-ivanov@petar-ivanov[00m [1m[34m ~/Projects/New-Gryphon/Gryphon[00m [31m‹2.3.1›[00m [33m‹init-rails-neo4j*› [00m[00m
+╰─[1m$[0m [K[?1h=ggit status[?1l>
+]2;git status]1;gitOn branch init-rails-neo4j
+Your branch is up-to-date with 'origin/init-rails-neo4j'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   typescript[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[1m[7m%[27m[1m[0m                                                                                                                                                ]2;petar-ivanov@petar-ivanov: ~/Projects/New-Gryphon/Gryphon]1;..yphon/Gryphon[0m[27m[24m[J(gryphon_env) ╭─[1m[32mpetar-ivanov@petar-ivanov[00m [1m[34m ~/Projects/New-Gryphon/Gryphon[00m [31m‹2.3.1›[00m [33m‹init-rails-neo4j*› [00m[00m
+╰─[1m$[0m [K[?1h=ggit addd  .[?1l>
+]2;git add .]1;git[1m[7m%[27m[1m[0m                                                                                                                                                ]2;petar-ivanov@petar-ivanov: ~/Projects/New-Gryphon/Gryphon]1;..yphon/Gryphon[0m[27m[24m[J(gryphon_env) ╭─[1m[32mpetar-ivanov@petar-ivanov[00m [1m[34m ~/Projects/New-Gryphon/Gryphon[00m [31m‹2.3.1›[00m [33m‹init-rails-neo4j*› [00m[00m
+╰─[1m$[0m [K[?1h=[H[2J[0m[27m[24m[J(gryphon_env) ╭─[1m[32mpetar-ivanov@petar-ivanov[00m [1m[34m ~/Projects/New-Gryphon/Gryphon[00m [31m‹2.3.1›[00m [33m‹init-rails-neo4j*› [00m[00m
+╰─[1m$[0m [Kcclean -fd[?1l>
+]2;clean -fd]1;cleanzsh: command not found: clean
+[1m[7m%[27m[1m[0m                                                                                                                                                ]2;petar-ivanov@petar-ivanov: ~/Projects/New-Gryphon/Gryphon]1;..yphon/Gryphon[0m[27m[24m[J(gryphon_env) ╭─[1m[32mpetar-ivanov@petar-ivanov[00m [1m[34m ~/Projects/New-Gryphon/Gryphon[00m [31m‹2.3.1›[00m [33m‹init-rails-neo4j*› [00m[00m
+╰─[1m$[0m [K[134C[31m127 ↵[00m[139D[?1h=l clean -fdgclean -fd[9Dgiclean -fd[9Dtclean -fd[9D clean -fd[9D[?1l>
+]2;git clean -fd]1;gitRemoving gryphon/db/neo4j/development/data/databases/graph.db/index/
+Removing gryphon/db/neo4j/development/import/
+Removing gryphon/db/neo4j/development/logs/
+Removing gryphon/db/neo4j/development/plugins/
+[1m[7m%[27m[1m[0m                                                                                                                                                ]2;petar-ivanov@petar-ivanov: ~/Projects/New-Gryphon/Gryphon]1;..yphon/Gryphon[0m[27m[24m[J(gryphon_env) ╭─[1m[32mpetar-ivanov@
