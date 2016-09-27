@@ -1364,4 +1364,33 @@ Aborting
 ╰─[1m$[0m [K[?1h=git add .pull origin init-rails-neo4j[28Dreset                       [23Dclean -fd[13D[4P[9C    [9Dgit add .statusreset statuspush origin init-rails-neo4j[28Dstatus                      [22Dcommit -m "Add 2 formated jobs ready to be pushed to the db."" " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " F"" " F"i"x"[?1l>
 ]2;git commit -m "Fix"]1;git[init-rails-neo4j e46e5b0] Fix
  2 files changed, 91 insertions(+), 1 deletion(-)
-[1m[7m%[27m[1m[0m                                                                                                                                                ]2;petar-ivanov@petar-ivanov: ~/Projects/New-Gryphon/Gryphon]1;..yphon/Gryphon[0m[27m[24m[J(gryphon_env) ╭─[1m[32mpetar-ivanov@petar-ivanov[00m [
+[1m[7m%[27m[1m[0m                                                                                                                                                ]2;petar-ivanov@petar-ivanov: ~/Projects/New-Gryphon/Gryphon]1;..yphon/Gryphon[0m[27m[24m[J(gryphon_env) ╭─[1m[32mpetar-ivanov@petar-ivanov[00m [1m[34m ~/Projects/New-Gryphon/Gryphon[00m [31m‹2.3.1›[00m [33m‹init-rails-neo4j› [00m[00m
+╰─[1m$[0m [K[?1h=git commit -m "Fix"[15Dadd .          [10Dpull origin init-rails-neo4j[28Dreset                       [23Dpull origin init-rails-neo4j                        sh origin ma  init-rails-neo4j[1m:[0m[0m [?1l>
+]2;git push origin init-rails-neo4j]1;gitTo git@github.com:pepincho/Gryphon.git
+ ! [rejected]        init-rails-neo4j -> init-rails-neo4j (non-fast-forward)
+error: failed to push some refs to 'git@github.com:pepincho/Gryphon.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+[1m[7m%[27m[1m[0m                                                                                                                                                ]2;petar-ivanov@petar-ivanov: ~/Projects/New-Gryphon/Gryphon]1;..yphon/Gryphon[0m[27m[24m[J(gryphon_env) ╭─[1m[32mpetar-ivanov@petar-ivanov[00m [1m[34m ~/Projects/New-Gryphon/Gryphon[00m [31m‹2.3.1›[00m [33m‹init-rails-neo4j*› [00m[00m
+╰─[1m$[0m [K[136C[31m1 ↵[00m[139D[?1h=git push origin init-rails-neo4j[28Dcommit -m "Fix"             [13D[15Dadd .          [10Dpull origin init-rails-neo4j[?1l>
+]2;git pull origin init-rails-neo4j]1;gitFrom github.com:pepincho/Gryphon
+ * branch            init-rails-neo4j -> FETCH_HEAD
+error: Your local changes to the following files would be overwritten by merge:
+	typescript
+Please, commit your changes or stash them before you can merge.
+Aborting
+[1m[7m%[27m[1m[0m                                                                                                                                                ]2;petar-ivanov@petar-ivanov: ~/Projects/New-Gryphon/Gryphon]1;..yphon/Gryphon[0m[27m[24m[J(gryphon_env) ╭─[1m[32mpetar-ivanov@petar-ivanov[00m [1m[34m ~/Projects/New-Gryphon/Gryphon[00m [31m‹2.3.1›[00m [33m‹init-rails-neo4j*› [00m[00m
+╰─[1m$[0m [K[134C[31m128 ↵[00m[139D[?1h=git pull origin init-rails-neo4j[26Dsh[24C[28Dcommit -m "Fix"             [13D[15Dadd .          [10D[?1l>
+]2;git add .]1;git[1m[7m%[27m[1m[0m                                                                                                                                                ]2;petar-ivanov@petar-ivanov: ~/Projects/New-Gryphon/Gryphon]1;..yphon/Gryphon[0m[27m[24m[J(gryphon_env) ╭─[1m[32mpetar-ivanov@petar-ivanov[00m [1m[34m ~/Projects/New-Gryphon/Gryphon[00m [31m‹2.3.1›[00m [33m‹init-rails-neo4j*› [00m[00m
+╰─[1m$[0m [K[?1h=git add .pull origin init-rails-neo4j[26Dsh[24C[28Dcommit -m "Fix"             [13D[?1l>
+]2;git commit -m "Fix"]1;git[init-rails-neo4j 96feeee] Fix
+ 1 file changed, 25 insertions(+), 1 deletion(-)
+[1m[7m%[27m[1m[0m                                                                                                                                                ]2;petar-ivanov@petar-ivanov: ~/Projects/New-Gryphon/Gryphon]1;..yphon/Gryphon[0m[27m[24m[J(gryphon_env) ╭─[1m[32mpetar-ivanov@petar-ivanov[00m [1m[34m ~/Projects/New-Gryphon/Gryphon[00m [31m‹2.3.1›[00m [33m‹init-rails-neo4j› [00m[00m
+╰─[1m$[0m [K[?1h=git commit -m "Fix"[15Dadd .          [10Dpull origin init-rails-neo4j[?1l>
+]2;git pull origin init-rails-neo4j]1;gitFrom github.com:pepincho/Gryphon
+ * branch            init-rails-neo4j -> FETCH_HEAD
+CONFLICT (modify/delete): typescript deleted in 59145a0c57e3be69a406529ccba4f0fe509084c5 and modified in HEAD. Version HEAD of typescript left in tree.
+Automatic merge failed; fix conflicts and then commit the result.
+[1m[7m%[27m[1m[0m                  
