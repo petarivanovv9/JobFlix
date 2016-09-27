@@ -3,7 +3,7 @@ MAINTAINER Georgi Kiryakov <george.kiryakov@gmail.com>
 
 RUN apt-get update && apt-get install -qq -y build-essential nodejs --fix-missing --no-install-recommends
 
-ENV INSTALL_PATH /gryphon_api
+ENV INSTALL_PATH /api
 RUN mkdir -p $INSTALL_PATH
 
 WORKDIR $INSTALL_PATH
