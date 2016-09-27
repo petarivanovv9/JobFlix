@@ -1340,4 +1340,28 @@ no changes added to commit (use "git add" and/or "git commit -a")
 Removing gryphon/db/neo4j/development/import/
 Removing gryphon/db/neo4j/development/logs/
 Removing gryphon/db/neo4j/development/plugins/
-[1m[7m%[27m[1m[0m                                                                                                                                                ]2;petar-ivanov@petar-ivanov: ~/Projects/New-Gryphon/Gryphon]1;..yphon/Gryphon[0m[27m[24m[J(gryphon_env) ╭─[1m[32mpetar-ivanov@
+[1m[7m%[27m[1m[0m                                                                                                                                                ]2;petar-ivanov@petar-ivanov: ~/Projects/New-Gryphon/Gryphon]1;..yphon/Gryphon[0m[27m[24m[J(gryphon_env) ╭─[1m[32mpetar-ivanov@petar-ivanov[00m [1m[34m ~/Projects/New-Gryphon/Gryphon[00m [31m‹2.3.1›[00m [33m‹init-rails-neo4j*› [00m[00m
+╰─[1m$[0m [K[?1h=ggit reset[?1l>
+]2;git reset]1;gitUnstaged changes after reset:
+M	typescript
+[1m[7m%[27m[1m[0m                                                                                                                                                ]2;petar-ivanov@petar-ivanov: ~/Projects/New-Gryphon/Gryphon]1;..yphon/Gryphon[0m[27m[24m[J(gryphon_env) ╭─[1m[32mpetar-ivanov@petar-ivanov[00m [1m[34m ~/Projects/New-Gryphon/Gryphon[00m [31m‹2.3.1›[00m [33m‹init-rails-neo4j*› [00m[00m
+╰─[1m$[0m [K[?1h=git resetclean -fd[13D[4P[9C    [9Dgit add .statusreset statuspush origin init-rails-neo4j[28Dstatus                      [22Dreset statusadd . [9Dclean -fd[9Dgit clean -fd[9Dreset    [9D         [9Dggit pull origin init-rails-neo4j[1m:[0m[0m [?1l>
+]2;git pull origin init-rails-neo4j]1;gitremote: Counting objects: 2, done.[K
+remote: Compressing objects:  50% (1/2)   [Kremote: Compressing objects: 100% (2/2)   [Kremote: Compressing objects: 100% (2/2), done.[K
+remote: Total 2 (delta 1), reused 0 (delta 0), pack-reused 0[K
+Unpacking objects:  50% (1/2)   Unpacking objects: 100% (2/2)   Unpacking objects: 100% (2/2), done.
+From github.com:pepincho/Gryphon
+ * branch            init-rails-neo4j -> FETCH_HEAD
+   2dc02ae..59145a0  init-rails-neo4j -> origin/init-rails-neo4j
+Updating 2dc02ae..59145a0
+error: Your local changes to the following files would be overwritten by merge:
+	typescript
+Please, commit your changes or stash them before you can merge.
+Aborting
+[1m[7m%[27m[1m[0m                                                                                                                                                ]2;petar-ivanov@petar-ivanov: ~/Projects/New-Gryphon/Gryphon]1;..yphon/Gryphon[0m[27m[24m[J(gryphon_env) ╭─[1m[32mpetar-ivanov@petar-ivanov[00m [1m[34m ~/Projects/New-Gryphon/Gryphon[00m [31m‹2.3.1›[00m [33m‹init-rails-neo4j*› [00m[00m
+╰─[1m$[0m [K[136C[31m1 ↵[00m[139D[?1h=git pull origin init-rails-neo4j[28Dreset                       [23Dpull origin init-rails-neo4j[32D                                [32Dgit pull origin init-rails-neo4j[28Dreset                       [23Dclean -fd[13Dclean -fd    [9Dgit add .statusadd . [?1l>
+]2;git add .]1;git[1m[7m%[27m[1m[0m                                                                                                                                                ]2;petar-ivanov@petar-ivanov: ~/Projects/New-Gryphon/Gryphon]1;..yphon/Gryphon[0m[27m[24m[J(gryphon_env) ╭─[1m[32mpetar-ivanov@petar-ivanov[00m [1m[34m ~/Projects/New-Gryphon/Gryphon[00m [31m‹2.3.1›[00m [33m‹init-rails-neo4j*› [00m[00m
+╰─[1m$[0m [K[?1h=git add .pull origin init-rails-neo4j[28Dreset                       [23Dclean -fd[13D[4P[9C    [9Dgit add .statusreset statuspush origin init-rails-neo4j[28Dstatus                      [22Dcommit -m "Add 2 formated jobs ready to be pushed to the db."" " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " F"" " F"i"x"[?1l>
+]2;git commit -m "Fix"]1;git[init-rails-neo4j e46e5b0] Fix
+ 2 files changed, 91 insertions(+), 1 deletion(-)
+[1m[7m%[27m[1m[0m                                                                                                                                                ]2;petar-ivanov@petar-ivanov: ~/Projects/New-Gryphon/Gryphon]1;..yphon/Gryphon[0m[27m[24m[J(gryphon_env) ╭─[1m[32mpetar-ivanov@petar-ivanov[00m [
