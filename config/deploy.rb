@@ -32,7 +32,7 @@ namespace :docker do
   task :compose_up do
     on roles(:docker) do
       puts "================Start All containers===================="
-      execute "cd #{deploy_to}/current && docker-compose up -d"
+      execute "cd #{deploy_to}/current && docker-compose -p gryphon up -d"
     end
   end
 
