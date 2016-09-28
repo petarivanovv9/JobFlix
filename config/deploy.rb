@@ -32,14 +32,14 @@ namespace :docker do
   task :compose_up do
     on roles(:docker) do
       puts "================Start All containers===================="
-      execute "cd #{deploy_to}/current && docker-compose -p gryphon up -d"
+      execute "cd #{deploy_to}/current && docker-compose -p gryphon up --build -d"
     end
   end
 
   task :compose_stop do
     on roles(:docker) do
       puts "================Stop All containers===================="
-      execute "cd #{deploy_to}/current && docker-compose stop && docker-compose rm -f"
+      execute "cd #{deploy_to}/current && docker-compose -p gryphon stop && docker-compose rm -f"
       execute 'docker rmi $(docker images --quiet --filter "dangling=true")', raise_on_non_zero_exit: false
     end
   end
