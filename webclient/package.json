@@ -9,7 +9,6 @@
     "dev": "npm-run-all --parallel watchify serve",
     "build": "cross-env NODE_ENV=production browserify -e src/main.js | uglifyjs -c warnings=false -m > dist/build.js",
     "lint": "eslint --ext .js,.vue src test/unit",
-    "test": "karma start karma.conf.js",
     "production": "npm run build && http-server -c 60 -a 0.0.0.0"
   },
   "browserify": {
