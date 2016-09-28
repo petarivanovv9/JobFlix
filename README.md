@@ -5,6 +5,7 @@
 
 Gryphon Board on Trello: https://trello.com/b/zXSgyJnf/gryphon
 
+Gryphon is on the web: http://46.101.245.130:3000/
 
 ## Technologies
 
