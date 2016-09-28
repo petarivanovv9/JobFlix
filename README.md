@@ -16,3 +16,5 @@ Gryphon Board on Trello: https://trello.com/b/zXSgyJnf/gryphon
 
 - [***Neo4j***] (https://neo4j.com/)
 
+- [**Vue.js**] (http://vuejs.org/)
+
