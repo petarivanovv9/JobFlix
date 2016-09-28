@@ -39,7 +39,7 @@ namespace :docker do
   task :compose_stop do
     on roles(:docker) do
       puts "================Stop All containers===================="
-      execute "cd #{deploy_to}/current && docker-compose -p gryphon stop && docker-compose rm -f"
+      execute "cd #{deploy_to}/current && docker-compose -p gryphon stop && docker-compose -p gryphon rm -f"
       execute 'docker rmi $(docker images --quiet --filter "dangling=true")', raise_on_non_zero_exit: false
     end
   end
@@ -47,7 +47,7 @@ namespace :docker do
   task :compose_build do
     on roles(:docker) do
       puts "================Build All containers===================="
-      execute "cd #{deploy_to}/current && docker-compose build"
+      execute "cd #{deploy_to}/current && docker-compose -p gryphon build"
     end
   end
 end
