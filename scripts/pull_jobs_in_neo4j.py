@@ -1,12 +1,6 @@
 from neo4j.v1 import GraphDatabase, basic_auth
 
 
-driver = GraphDatabase.driver("bolt://localhost:7472", auth=basic_auth("neo4j", "neo4j"))
-session = driver.session()
-
-session.close()
-
-
 job_1 = {
     "title": "Senior .NET Developers",
     "category": "\u0418\u0422 - \u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430/\u043f\u043e\u0434\u0434\u0440\u044a\u0436\u043a\u0430 \u043d\u0430 \u0441\u043e\u0444\u0442\u0443\u0435\u0440",
@@ -42,6 +36,7 @@ BUSY_FULL = "Full Time"
 TYPE_PERM = "Permament"
 LEVEL_EXPRTS = "Experts/Specialists"
 
+
 for job in jobs:
     for key in job_1.keys():
         job[key] = job[key].encode(encoding='UTF-8').decode("utf-8", "strict")
@@ -50,5 +45,43 @@ for job in jobs:
     job['busy'] = BUSY_FULL
     job['type'] = TYPE_PERM
     job['level'] = LEVEL_EXPRTS
-    print(job)
-    print(50 * '<>')
+    # print(job)
+    # print(50 * '<>')
+
+#
+# Neo4j - Cypher
+#
+
+driver = GraphDatabase.driver("bolt://localhost:7472", auth=basic_auth("neo4j", "neo4j"))
+session = driver.session()
+
+for job in jobs:
+    # creating Company
+    session.run(
+        "MERGE (n:Company {name: {company_name}})",
+        {'company_name': job['company']}
+    )
+    # creating Category
+    session.run(
+        "MERGE (n:Category {name: {category_name}})",
+        {'category_name': job['category']}
+    )
+    # creating City
+    session.run(
+        "MERGE (n:City {name: {city_name}})",
+        {'city_name': job['place']}
+    )
+    # creating JobOffer
+    session.run(
+        "MERGE (n:JobOffer {name:{headline}, level:{level}, busy:{busy}, type:{type}, description:{description}, publicated:{publicated}})",
+        {
+            'headline': job['title'],
+            'level': job['level'],
+            'busy': job['busy'],
+            'type': job['type'],
+            'description': job['description'],
+            'publicated': job['publicated']
+        }
+    )
+
+session.close()
