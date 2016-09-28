@@ -1,5 +1,7 @@
 from neo4j.v1 import GraphDatabase, basic_auth
 
+from datetime import datetime
+
 
 job_1 = {
     "title": "Senior .NET Developers",
@@ -36,6 +38,7 @@ BUSY_FULL = "Full Time"
 TYPE_PERM = "Permament"
 LEVEL_EXPRTS = "Experts/Specialists"
 
+DATAFORMAT = '%d.%m.%Y'
 
 for job in jobs:
     for key in job_1.keys():
@@ -45,6 +48,8 @@ for job in jobs:
     job['busy'] = BUSY_FULL
     job['type'] = TYPE_PERM
     job['level'] = LEVEL_EXPRTS
+    # datatime is not supported in neo4j yet
+    # job['publicated'] = datetime.strptime(job['publicated'], DATAFORMAT)
     # print(job)
     # print(50 * '<>')
 
@@ -83,5 +88,20 @@ for job in jobs:
             'publicated': job['publicated']
         }
     )
+    # creating relations
+    session.run(
+        "MATCH (a:JobOffer), (b:Company), (c:City), (d:Category)"
+        "WHERE a.name = {job_name} AND b.name = {company_name} AND c.name = {city_name} AND d.name = {category_name}"
+        "MERGE (a)-[:LOCATED_IN]->(c)"
+        "MERGE (a)-[:IS_IN]->(d)"
+        "MERGE (a)-[:PUBLISHED_BY]->(b)",
+        {
+            'job_name': job['title'],
+            'company_name': job['company'],
+            'city_name': job['place'],
+            'category_name': job['category']
+        }
+    )
+
 
 session.close()
