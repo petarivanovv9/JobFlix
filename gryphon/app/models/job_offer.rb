@@ -12,4 +12,6 @@ class JobOffer
   has_one :out, :company, type: :PUBLISHED_BY, model_class: :Company
   has_one :out, :category, type: :IS_IN, model_class: :Category
 
+  has_many :out, :skills, type: :REQUIRES, model_class: :Skill
+
 end
