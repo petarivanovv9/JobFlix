@@ -5,6 +5,7 @@ set :application, 'gryphon'
 
 set :scm, :git
 set :repo_url, 'git@github.com:pepincho/Gryphon.git'
+set :deploy_via, :remote_cache
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
