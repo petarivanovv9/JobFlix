@@ -17,6 +17,10 @@
   </h3>
   <% @job_offers.each do |job| %>
     <p> <%= job.name %> | <%= job.level %> | <%= job.city.name %> </p>
+    <%
+      @job_name = job.name
+    %>
+    <%= link_to @job_name,  {:controller => :job_offers, :action => :show, :name => @job_name }  %>
   <% end %>
 </div>
 

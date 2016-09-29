@@ -12,7 +12,6 @@ class User
     has_one :out, :city, type: :LIVES_IN, model_class: :City
     has_many :out, :categories, type: :INTERESTED_IN, model_class: :Category
 
-
     property :username, type: String
     property :facebook_token, type: String
     index :facebook_token
@@ -23,6 +22,13 @@ class User
     ## Database authenticatable
     property :email, type: String, null: false, default: ""
     index :email
+
+    # id_property :name
+    # before_create :set_name
+    #
+    # def set_name
+    #   self.name = self.email
+    # end
 
     property :encrypted_password
 
