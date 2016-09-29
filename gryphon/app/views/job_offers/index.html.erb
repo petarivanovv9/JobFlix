@@ -1,0 +1,8 @@
+<h1>
+  All Job Offers:
+</h1>
+
+<% @job_offers.each do |job| %>
+  <p> <%= job.name %> | <%= job.level %> | <%= job.city.name %> </p>
+  <%= link_to job.name,  {:controller => :job_offers, :action => :show, :name => job.name }  %>
+<% end %>

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
                               :sign_out => 'logout',
                               :sign_up => 'register'}
 
-  get '/job_offer/:name', to: 'job_offers#show', :name => /[^\/]+/, as: 'job_offer'
-
+  get '/job_offers/:name', to: 'job_offers#show', :name => /[^\/]+/
+  get '/job_offers/', to: 'job_offers#index'
 
 end
