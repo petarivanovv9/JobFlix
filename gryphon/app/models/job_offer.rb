@@ -14,4 +14,6 @@ class JobOffer
 
   has_many :out, :skills, type: :REQUIRES, model_class: :Skill
 
+  # JobOffer is liked by User, JobOffer <- User
+  has_many :in, :liked_by, origin: :likes, model_class: :User
 end

@@ -1,3 +1,14 @@
 <h1>
   <%= @job_offer.name %>
 </h1>
+
+
+<% if user_signed_in? %>
+
+  <%= link_to 'Like Job Offer',
+      { :controller => :job_offers, :action => :like_job_offer,
+        :user_id => current_user.id, :job_offer_name => @job_offer.name },
+      {:method => :post}
+  %>
+
+<% end %>

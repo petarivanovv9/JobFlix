@@ -11,5 +11,6 @@ Rails.application.routes.draw do
 
   get '/job_offers/:name', to: 'job_offers#show', :name => /[^\/]+/
   get '/job_offers/', to: 'job_offers#index'
+  post '/job_offers/:name/like', to: 'job_offers#like_job_offer', :name => /[^\/]+/
 
 end

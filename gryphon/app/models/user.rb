@@ -12,6 +12,9 @@ class User
     has_one :out, :city, type: :LIVES_IN, model_class: :City
     has_many :out, :categories, type: :INTERESTED_IN, model_class: :Category
 
+    # User likes JobOffer, User -> JobOffer
+    has_many :out, :likes, type: 'LIKES', model_class: :JobOffer
+
     property :username, type: String
     property :facebook_token, type: String
     index :facebook_token
