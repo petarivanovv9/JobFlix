@@ -1,6 +1,8 @@
 class Category
   include Neo4j::ActiveNode
 
-  property :name, type: String
+  id_property :name
+
+  has_many :in, :job_offers, origin: :category, model_class: :JobOffer
 
 end

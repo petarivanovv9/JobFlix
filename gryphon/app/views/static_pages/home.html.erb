@@ -1,3 +1,42 @@
 <h1>
   Gryphon
 </h1>
+
+<div>
+  <h3>
+    Cities:
+  </h3>
+  <% @cities.each do |city| %>
+    <p> <%= city.name %> </p>
+  <% end %>
+</div>
+
+<div>
+  <h3>
+    JobOffers:
+  </h3>
+  <% @job_offers.each do |job| %>
+    <p> <%= job.name %> | <%= job.level %> | <%= job.city.name %> </p>
+  <% end %>
+</div>
+
+<div>
+  <h3>
+    JobOffers in the first city:
+  </h3>
+  <% @sofia_job_offers.each do |sf_job| %>
+    <p> <%= sf_job.name %> | <%= sf_job.level %> | <%= sf_job.city.name %> </p>
+  <% end %>
+</div>
+
+<div>
+  <h3>
+    For each compay print all published jobs:
+  </h3>
+  <% @companies.each do |company, job_offers| %>
+    <p> <%= company %>: </p>
+      <% job_offers.each do |job_offer| %>
+        <li> <%= job_offer.name %> </li>
+      <% end %>
+  <% end %>
+</div>

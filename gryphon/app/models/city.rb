@@ -1,6 +1,8 @@
 class City
   include Neo4j::ActiveNode
 
-  property :name, type: String
+  id_property :name
+
+  has_many :in, :job_offers, origin: :city, model_class: :JobOffer
 
 end
