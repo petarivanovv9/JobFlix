@@ -9,8 +9,6 @@ class JobOffersController < ApplicationController
   end
 
   def like_job_offer
-    puts params
-
     user = User.find(params[:user_id])
     job_offer = JobOffer.find(params[:job_offer_name])
 
