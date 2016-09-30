@@ -1,0 +1,7 @@
+#!/bin/bash
+set -e
+
+# Puma gets grumpy about PID files pre-existing
+rm -f ./tmp/pids/*
+
+rails server -b 0.0.0.0 -p 3000

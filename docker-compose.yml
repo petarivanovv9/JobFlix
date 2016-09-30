@@ -1,0 +1,43 @@
+version: '2'
+
+services:
+  elasticsearch:
+    image: elasticsearch:2.4
+    ports:
+      - 9200:9200
+      - 9300:9300
+    volumes:
+      - ~/.docker-volumes/gryphon/elasticsearch/data:/usr/share/elasticsearch/data
+
+  neo4j:
+    image: neo4j:3.0.0
+    environment:
+      NEO4J_AUTH: none
+    ports:
+      - 7474:7474
+      - 7687:7687
+    volumes:
+      - ~/.docker-volumes/gryphon/neo4j/data:/data
+
+  gryphon:
+    build: ./gryphon
+    depends_on:
+      - neo4j
+      - elasticsearch
+    links:
+      - elasticsearch
+      - neo4j
+    volumes:
+      - ./gryphon:/gryphon
+    ports:
+      - 3000:3000
+    env_file:
+      - ./gryphon/api.env
+
+  client:
+    build: ./webclient
+    volumes:
+      - ./webclient:/webclient
+    ports:
+      - 8080:8080
+      - 3123:3123
