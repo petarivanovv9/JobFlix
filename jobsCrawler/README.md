@@ -1,2 +1,4 @@
 To start crawling enter jobsCrawler directory and type:
-crapy crawl crawler -o jobs.json
+```
+scrapy crawl crawler -o jobs.json
+```
