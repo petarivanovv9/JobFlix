@@ -57,7 +57,7 @@ for job in jobs:
 # Neo4j - Cypher
 #
 
-driver = GraphDatabase.driver("bolt://localhost:7472", auth=basic_auth("neo4j", "neo4j"))
+driver = GraphDatabase.driver("bolt://localhost:7687", auth=basic_auth("neo4j", "neo4j"))
 session = driver.session()
 
 for job in jobs:
