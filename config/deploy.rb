@@ -9,7 +9,7 @@ set :deploy_via, :remote_cache
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
-set :branch, 'dockerization'
+set :branch, 'docker-rails'
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '~/gryphon'
 
