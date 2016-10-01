@@ -66,7 +66,7 @@ class ElasticJobs
   end
 end
 
-# ElasticJobs.make_jobs(client)
+ElasticJobs.make_jobs(client)
 # all_ids = ["AVeASEeoiY9WGzHANWU4", "AVeASEjuiY9WGzHANWU8", "AVeASElCiY9WGzHANWU9", "AVeASEuviY9WGzHANWVF", "AVeASEhJiY9WGzHANWU6", "AVeASEmfiY9WGzHANWU-", "AVeASEnpiY9WGzHANWU_", "AVeASEpziY9WGzHANWVB", "AVeASESviY9WGzHANWU3", "AVeASEifiY9WGzHANWU7"]
 # all_ids.each do |job_id|
 rec = Recommendator.new(client)
@@ -89,3 +89,4 @@ def make_all_connections(jobs, rec)
 end
 
 puts make_all_connections(all_jobs, rec)
+
