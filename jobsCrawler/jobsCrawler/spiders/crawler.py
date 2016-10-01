@@ -6,6 +6,8 @@ STARTING = 'https://www.jobs.bg/front_job_search.php?first_search=1&is_region&ci
 
 NEXT_URL = "https://www.jobs.bg/front_job_search.php?frompage={}&is_region=&cities%5B0%5D=1&categories%5B0%5D=15&all_type=0&all_position_level=1&all_company_type=1&keyword=#paging"
 
+NEXT_URL_2 = "https://www.jobs.bg/front_job_search.php?frompage={}&is_region=&cities%5B%5D=1&categories%5B%5D=20&all_type=0&all_position_level=1&all_company_type=1&keyword=#paging"
+
 STEP = 15
 
 
@@ -17,7 +19,8 @@ class GryphoncrawlSpider(scrapy.Spider):
         yield STARTING
         current_jobs_number = STEP
         while True:
-            yield NEXT_URL.format(current_jobs_number)
+            # yield NEXT_URL.format(current_jobs_number)
+            yield NEXT_URL_2.format(current_jobs_number)
             current_jobs_number += STEP
 
     name = "crawler"
