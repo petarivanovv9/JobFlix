@@ -5,7 +5,7 @@ require 'neo4j'
 
 SIZE_JOBS = 8
 JOB_END_RESULT = 'id'
-CONNECTION = 'http://10.255.255.72:7474'
+CONNECTION = 'http://neo4j:7474'
 
 
 client = Elasticsearch::Client.new host: 'http://elasticsearch:9200'
@@ -55,7 +55,7 @@ class ElasticJobs
 
     def fill_jobs_elastic(client, jobs)
       jobs.each do |job|
-        client.index(index: 'jobs', type: 'job', body: job.n.props)
+        client.index(index: 'jobs', type: 'job', id: job.n.id,  body: job.n.props)
       end
     end
 
@@ -66,14 +66,17 @@ class ElasticJobs
   end
 end
 
-# ElasticJobs.make_jobs(client)
+client.indices.delete(index: 'jobs')
+ElasticJobs.make_jobs(client)
 rec = Recommendator.new(client)
-all_jobs = client.search(index: 'jobs', body: { query: { match_all: {} } })['hits']['hits']
+neo4j_session = Neo4j::Session.open(:server_db, CONNECTION)
+all_jobs = neo4j_session.query('MATCH (n:JobOffer)  RETURN n')
+
 
 def make_all_connections(jobs, rec)
   connections = {}
   jobs.each do |job|
-    connections[job["_source"]["id"]] = rec.find_matching_jobs(job["_id"])
+    connections[job.n.id] = rec.find_matching_jobs(job.n.id)
   end
   connections
 end
