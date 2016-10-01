@@ -1,7 +1,7 @@
 from neo4j.v1 import GraphDatabase, basic_auth
 
 from datetime import datetime
-
+import re
 
 job_1 = {
     "title": "Senior .NET Developers",
@@ -40,6 +40,9 @@ LEVEL_EXPRTS = "Experts/Specialists"
 
 DATAFORMAT = '%d.%m.%Y'
 
+job_1['identificator'] = ""
+job_2['identificator'] = ""
+
 for job in jobs:
     for key in job_1.keys():
         job[key] = job[key].encode(encoding='UTF-8').decode("utf-8", "strict")
@@ -48,6 +51,8 @@ for job in jobs:
     job['busy'] = BUSY_FULL
     job['type'] = TYPE_PERM
     job['level'] = LEVEL_EXPRTS
+
+    job['identificator'] = re.sub(r"(\s+)", "_", job['title']).lower()
     # datatime is not supported in neo4j yet
     # job['publicated'] = datetime.strptime(job['publicated'], DATAFORMAT)
     # print(job)
@@ -59,6 +64,8 @@ for job in jobs:
 
 driver = GraphDatabase.driver("bolt://localhost:7687", auth=basic_auth("neo4j", "neo4j"))
 session = driver.session()
+
+session.run("MATCH (n) OPTIONAL MATCH (n)-[r]-() DELETE n,r")
 
 for job in jobs:
     # creating Company
@@ -78,14 +85,15 @@ for job in jobs:
     )
     # creating JobOffer
     session.run(
-        "MERGE (n:JobOffer {name:{headline}, level:{level}, busy:{busy}, type:{type}, description:{description}, publicated:{publicated}})",
+        "MERGE (n:JobOffer {name:{headline}, level:{level}, busy:{busy}, type:{type}, description:{description}, publicated:{publicated}, identificator:{identificator}})",
         {
             'headline': job['title'],
             'level': job['level'],
             'busy': job['busy'],
             'type': job['type'],
             'description': job['description'],
-            'publicated': job['publicated']
+            'publicated': job['publicated'],
+            'identificator': job['identificator']
         }
     )
     # creating relations
