@@ -22,7 +22,7 @@ body {
 .navbar-custome {
 	min-height: 40px;
 	color: #fff;
-	background-color: #C12127;
+	background-color: #3498db;
 }
 
 .navbar-brand {
@@ -81,8 +81,12 @@ body {
 
 }
 
+.job-offer {
+	margin-top: 1.3em;
+}
+
 .like-offer {
-	background-color: #C12127;
+	background-color: #3498db;
 	color: #fff;
 	font-size: 1.3em;
 	padding: 5px;
@@ -91,6 +95,7 @@ body {
 	width: 100%;
 	display: block;
 	text-align: center;
+	margin-top: 25px;
 }
 
 .like-offer:hover {

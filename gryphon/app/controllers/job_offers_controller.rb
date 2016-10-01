@@ -1,22 +1,24 @@
 class JobOffersController < ApplicationController
+  before_filter :authorize, :except => [:index]
 
   def index
     @job_offers = JobOffer.all.to_a
   end
 
   def show
-    user_id = current_user.id
-    user = User.find(user_id) if ! user_id.nil?
-
     # user = User.find(params[:user_id])
     @job_offer = JobOffer.find_by(id: params[:id])
 
     @similar_offers = JobOffer.all.to_a
 
-    user.views << @job_offer if ! user.nil? and ! user.views.to_a.include?(@job_offer)
+    current_user.views << @job_offer if ! current_user.nil? and ! current_user.views.to_a.include?(@job_offer)
 
-    #user.views << @job_offer if ! user.views.to_a.include?(@job_offer)
-end
+    #current_user.views << @job_offer if ! current_user.views.to_a.include?(@job_offer)
+  end
+
+  def authorize
+    redirect_to root_path if current_user.nil?
+  end
 
   def like_job_offer
     user_id = current_user.id
