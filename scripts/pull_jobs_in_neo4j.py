@@ -65,7 +65,7 @@ for job in jobs:
 driver = GraphDatabase.driver("bolt://localhost:7687", auth=basic_auth("neo4j", "neo4j"))
 session = driver.session()
 
-session.run("MATCH (n) OPTIONAL MATCH (n)-[r]-() DELETE n,r")
+# session.run("MATCH (n) OPTIONAL MATCH (n)-[r]-() DELETE n,r")
 
 for job in jobs:
     # creating Company
