@@ -3,7 +3,7 @@ require 'json'
 require 'neo4j'
 
 
-SIZE_JOBS = 5
+SIZE_JOBS = 8
 JOB_END_RESULT = 'id'
 CONNECTION = 'http://10.255.255.72:7474'
 
@@ -78,14 +78,12 @@ rec = Recommendator.new(client)
 #job_id = "AVeASEeoiY9WGzHANWU4"
 #AVeAb5twiY9WGzHANWWP
 
-all_jobs = client.search(index: 'jobs', body: { query: { match_all: {} } })['hits']['hits'].map do |job|
-  job["_id"]
-end
+all_jobs = client.search(index: 'jobs', body: { query: { match_all: {} } })['hits']['hits']
 
 def make_all_connections(jobs, rec)
   connections = {}
   jobs.each do |job|
-    connections[job] = rec.find_matching_jobs(job)
+    connections[job["_source"]["id"]] = rec.find_matching_jobs(job["_id"])
   end
   connections
 end
