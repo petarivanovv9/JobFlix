@@ -1,12 +1,23 @@
-<h1>
-  All Job Offers:
-</h1>
 
-<% if user_signed_in? %>
-  <% user_id = current_user.id %>
-<% end %>
+<%= render partial: 'shared/search'%>
 
-<% @job_offers.each do |job| %>
-  <p> <%= job.name %> | <%= job.level %> | <%= job.city.name %> </p>
-  <%= link_to job.name, {:controller => :job_offers, :action => :show, :id => job.id} %>
-<% end %>
+<h3>
+  Results
+</h3>
+
+<ul class="media-list">
+	<% @job_offers.each do |job| %>
+	  <li class="media">
+	    <div class="media-body">
+	      <h4 class="media-heading">
+	      	<%= link_to job.name, {:controller => :job_offers, :action => :show, :id => job.id} %>
+	      </h4>
+	      <p>
+	      	<%= job.level %> | <%= job.city.name %>
+	      </p>
+	    </div>
+	  </li>
+  <% end %>
+</ul>
+
+

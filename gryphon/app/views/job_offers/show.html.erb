@@ -1,12 +1,21 @@
-<h1>
-  <%= @job_offer.name %>
-</h1>
+<div class="col-md-9">
+	<h1>
+	  <%= @job_offer.name %>
+	</h1>
 
 
-<% if user_signed_in? %>
+	<% if user_signed_in? %>
 
-  <%= link_to 'Like Job Offer',
-      {:controller => :job_offers, :action => :like_job_offer,
-       :id => @job_offer.id}, {:method => :post} %>
+	  <%= link_to 'Like',
+	      {:controller => :job_offers, :action => :like_job_offer,
+	       :id => @job_offer.id}, {:method => :post, class: "like-offer"} %>
 
-<% end %>
+	<% end %>
+
+	<pre class="job-desc"><%= @job_offer.description.strip %></pre>
+</div>
+
+<div class="col-md-3">
+	<h3>Similar offers</h3>
+	....
+</div>

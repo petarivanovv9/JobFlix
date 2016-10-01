@@ -1,0 +1,26 @@
+<div class="row search-bar">
+	<div class="col-md-12">
+		<%= form_tag("/search", method: "get") do %>
+			<div class="row">
+
+				<div class="col-xs-12">
+		  			<%= text_field_tag(:q, nil, class: "form-control", placeholder: "Search") %>
+				</div>
+
+				<div class="col-md-6">
+					<%= select_tag :city, options_for_select(['Sofia', 'Burgas']), class: "form-control" %>
+				</div>
+
+				<div class="col-md-6">
+					<%= select_tag :category, options_for_select(['IT', 'Baba']), class: "form-control" %>
+				</div>
+
+				<div class="col-xs-12">
+		  			<%= submit_tag("Search") %>
+				</div>
+
+			</div>
+		<% end %>
+
+	</div>
+</div>
