@@ -2,7 +2,11 @@
   All Job Offers:
 </h1>
 
+<% if user_signed_in? %>
+  <% user_id = current_user.id %>
+<% end %>
+
 <% @job_offers.each do |job| %>
   <p> <%= job.name %> | <%= job.level %> | <%= job.city.name %> </p>
-  <%= link_to job.name,  {:controller => :job_offers, :action => :show, :name => job.name }  %>
+  <%= link_to job.name, {:controller => :job_offers, :action => :show, :identificator => job.identificator, :user_id => user_id} %>
 <% end %>

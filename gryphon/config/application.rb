@@ -38,11 +38,13 @@ module Gryphon
     # Only loads a smaller set of middleware suitable for API only apps.
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
-    config.api_only = true
+
+
+    # config.api_only = true
 
     config.log_level = :debug
     config.log_tags  = [:subdomain, :uuid]
-    config.logger    = ActiveSupport::TaggedLogging.new(Logger.new(STDOUT))
+    config.logger    = ActiveSupport::TaggedLogging.new(ActiveSupport::Logger.new(STDOUT))
 
     if !ENV['DISABLE_NEO4J_SESSION']
       # config.generators { |g| g.orm :neo4j }

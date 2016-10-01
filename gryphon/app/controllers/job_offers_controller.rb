@@ -5,12 +5,21 @@ class JobOffersController < ApplicationController
   end
 
   def show
-    @job_offer = JobOffer.find(params[:name])
-  end
+    user = User.find(params[:user_id]) if ! params[:user_id].nil?
+
+    # user = User.find(params[:user_id])
+    @job_offer = JobOffer.find_by(identificator: params[:identificator])
+
+    user.views << @job_offer if ! user.nil? and ! user.views.to_a.include?(@job_offer)
+
+    #user.views << @job_offer if ! user.views.to_a.include?(@job_offer)
+end
 
   def like_job_offer
+    puts params.keys
+
     user = User.find(params[:user_id])
-    job_offer = JobOffer.find(params[:job_offer_name])
+    job_offer = JobOffer.find_by(identificator: params[:identificator])
 
     user.likes << job_offer if ! user.likes.to_a.include?(job_offer)
 

@@ -6,8 +6,8 @@
 <% if user_signed_in? %>
 
   <%= link_to 'Like Job Offer',
-      { :controller => :job_offers, :action => :like_job_offer,
-        :user_id => current_user.id, :job_offer_name => @job_offer.name },
+      {:controller => :job_offers, :action => :like_job_offer,
+       :identificator => @job_offer.identificator, :user_id => current_user.id},
       {:method => :post}
   %>
 

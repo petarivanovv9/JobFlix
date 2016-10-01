@@ -2,9 +2,13 @@
   Gryphon
 </h1>
 
+<% if user_signed_in? %>
+  <% user_id = current_user.id %>
+<% end %>
+
 <p> Number of active job offers: <%= @num_active_job_offers %> </p>
 
-<%= link_to 'View all job offers',  {:controller => :job_offers, :action => :index}  %>
+<%= link_to 'View all job offers', {:controller => :job_offers, :action => :index} %>
 
 <div>
   <h3>
@@ -12,7 +16,7 @@
   </h3>
   <% @random_job_offers.each do |x| %>
     <p>
-      <%= link_to x.name,  {:controller => :job_offers, :action => :show, :name => x.name }  %>
+      <%= link_to x.name, {:controller => :job_offers, :action => :show, :identificator => x.identificator, :user_id => user_id} %>
       | <%= x.level %> | <%= x.city.name %>
     </p>
   <% end %>

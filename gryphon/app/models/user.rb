@@ -14,6 +14,8 @@ class User
 
     # User likes JobOffer, User -> JobOffer
     has_many :out, :likes, type: 'LIKES', model_class: :JobOffer
+    # User viewed JobOffer, User -> JobOffer
+    has_many :out, :views, type: 'VIEWED', model_class: :JobOffer
 
     property :username, type: String
     property :facebook_token, type: String
