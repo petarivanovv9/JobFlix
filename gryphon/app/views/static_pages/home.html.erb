@@ -16,7 +16,7 @@
   </h3>
   <% @random_job_offers.each do |x| %>
     <p>
-      <%= link_to x.name, {:controller => :job_offers, :action => :show, :identificator => x.identificator, :user_id => user_id} %>
+      <%= link_to x.name, {:controller => :job_offers, :action => :show, :id => x.id, :user_id => user_id} %>
       | <%= x.level %> | <%= x.city.name %>
     </p>
   <% end %>
