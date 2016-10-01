@@ -11,6 +11,8 @@ class JobOffersController < ApplicationController
     # user = User.find(params[:user_id])
     @job_offer = JobOffer.find_by(id: params[:id])
 
+    @similar_offers = JobOffer.all.to_a
+
     user.views << @job_offer if ! user.nil? and ! user.views.to_a.include?(@job_offer)
 
     #user.views << @job_offer if ! user.views.to_a.include?(@job_offer)

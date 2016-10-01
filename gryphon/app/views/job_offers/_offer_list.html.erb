@@ -1,0 +1,14 @@
+<ul class="media-list">
+	<% job_offers.each do |job| %>
+	  <li class="media">
+	    <div class="media-body">
+	      <h4 class="media-heading">
+	      	<%= link_to job.name, {:controller => :job_offers, :action => :show, :id => job.id} %>
+	      </h4>
+	      <p>
+	      	<%= job.level %> | <%= job.city.name %>
+	      </p>
+	    </div>
+	  </li>
+  <% end %>
+</ul>
