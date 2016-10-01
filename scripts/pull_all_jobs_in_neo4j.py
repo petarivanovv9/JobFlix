@@ -4,7 +4,10 @@ import re
 import hashlib
 
 
-with open('../jobsCrawler/jobs_url.json') as data_file:
+# with open('../jobsCrawler/jobs_url.json') as data_file:
+#     all_jobs = json.load(data_file)
+
+with open('../jobsCrawler/it_jobs_urls.json') as data_file:
     all_jobs = json.load(data_file)
 
 
@@ -20,7 +23,7 @@ DATAFORMAT = '%d.%m.%Y'
 # set the defualt values
 for job in all_jobs:
     #job['url'] = job['url'].encode(encoding='UTF-8').decode("utf-8", "strict")
-    job['url'] = hashlib.sha256(job['url'].encode()).hexdigest()
+    job['url'] = hashlib.sha1(job['url'].encode()).hexdigest()
     job['identificator'] = ""
     job['category'] = CAT_SOF_DEV
     job['place'] = CITY_SOF
@@ -61,10 +64,15 @@ for job in all_jobs:
 driver = GraphDatabase.driver("bolt://localhost:7687", auth=basic_auth("neo4j", "neo4j"))
 session = driver.session()
 
-session.run("MATCH (n) OPTIONAL MATCH (n)-[r]-() DELETE n,r")
+# session.run("MATCH (n) OPTIONAL MATCH (n)-[r]-() DELETE n,r")
 
+all_jobs_unique = {}
 
 for job in all_jobs:
+    all_jobs_unique[job['url']] = job
+
+for key, job in all_jobs_unique.items():
+    # print(job)
     # creating Company
     session.run(
         "MERGE (n:Company {name: {company_name}})",
@@ -109,5 +117,7 @@ for job in all_jobs:
         }
     )
 
-
-session.close()
+try:
+ session.close()
+except Exception as dick:
+ print(dick)
