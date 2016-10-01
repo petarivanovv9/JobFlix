@@ -66,18 +66,8 @@ class ElasticJobs
   end
 end
 
-ElasticJobs.make_jobs(client)
-# all_ids = ["AVeASEeoiY9WGzHANWU4", "AVeASEjuiY9WGzHANWU8", "AVeASElCiY9WGzHANWU9", "AVeASEuviY9WGzHANWVF", "AVeASEhJiY9WGzHANWU6", "AVeASEmfiY9WGzHANWU-", "AVeASEnpiY9WGzHANWU_", "AVeASEpziY9WGzHANWVB", "AVeASESviY9WGzHANWU3", "AVeASEifiY9WGzHANWU7"]
-# all_ids.each do |job_id|
+# ElasticJobs.make_jobs(client)
 rec = Recommendator.new(client)
-#results = rec.find_matching_jobs("AVeAb5twiY9WGzHANWWP")
-#puts "Ehooo"
-#puts results.count
-#puts results
-# end
-#job_id = "AVeASEeoiY9WGzHANWU4"
-#AVeAb5twiY9WGzHANWWP
-
 all_jobs = client.search(index: 'jobs', body: { query: { match_all: {} } })['hits']['hits']
 
 def make_all_connections(jobs, rec)
@@ -88,5 +78,6 @@ def make_all_connections(jobs, rec)
   connections
 end
 
-puts make_all_connections(all_jobs, rec)
-
+File.open('connections.json', 'w') do |f|
+  f.write(make_all_connections(all_jobs, rec).to_json)
+end
