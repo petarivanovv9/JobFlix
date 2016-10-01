@@ -8,5 +8,5 @@
 
 <% @job_offers.each do |job| %>
   <p> <%= job.name %> | <%= job.level %> | <%= job.city.name %> </p>
-  <%= link_to job.name, {:controller => :job_offers, :action => :show, :id => job.id, :user_id => user_id} %>
+  <%= link_to job.name, {:controller => :job_offers, :action => :show, :id => job.id} %>
 <% end %>

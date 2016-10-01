@@ -10,10 +10,10 @@ Rails.application.routes.draw do
                               :sign_up => 'register'}
 
   get '/job_offers', to: 'job_offers#index'
+  #get '/job_offers/:id', to: 'job_offers#show'
   get '/job_offers/:id', to: 'job_offers#show'
-  get '/job_offers/:id/:user_id', to: 'job_offers#show'
 
-  post '/job_offers/:id/:user_id/like', to: 'job_offers#like_job_offer'
+  post '/job_offers/:id/like', to: 'job_offers#like_job_offer'
 
   # , :identificator => /[^\/]+/
 

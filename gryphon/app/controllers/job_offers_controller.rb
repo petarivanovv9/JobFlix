@@ -5,7 +5,8 @@ class JobOffersController < ApplicationController
   end
 
   def show
-    user = User.find(params[:user_id]) if ! params[:user_id].nil?
+    user_id = current_user.id
+    user = User.find(user_id) if ! user_id.nil?
 
     # user = User.find(params[:user_id])
     @job_offer = JobOffer.find_by(id: params[:id])
@@ -16,9 +17,8 @@ class JobOffersController < ApplicationController
 end
 
   def like_job_offer
-    puts params.keys
-
-    user = User.find(params[:user_id])
+    user_id = current_user.id
+    user = User.find(user_id)
     job_offer = JobOffer.find_by(id: params[:id])
 
     user.likes << job_offer if ! user.likes.to_a.include?(job_offer)
