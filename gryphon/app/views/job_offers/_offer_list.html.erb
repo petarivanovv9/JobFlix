@@ -6,7 +6,10 @@
 	      	<%= link_to job.name, {:controller => :job_offers, :action => :show, :id => job.id} %>
 	      </h4>
 	      <p>
-	      	<%= job.level %> | <%= job.city.name %>
+	      	Level: <%= job.level %>
+					<br /> City: <%= job.city.name %>
+					<br /> Company: <%= job.company.name %>
+					<br /> Busy: <%= job.busy %>
 	      </p>
 	    </div>
 	  </li>

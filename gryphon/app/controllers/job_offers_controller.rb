@@ -11,23 +11,31 @@ class JobOffersController < ApplicationController
 
     @similar_offers = recommended_offers
 
-    current_user.views << @job_offer if ! current_user.nil? and ! current_user.views.to_a.include?(@job_offer)
+    current_user.views << @job_offer if ! current_user.nil? and ! current_user.views.include?(@job_offer)
+
+    @is_liked = liked?(current_user, @job_offer)
   end
 
   def authorize
-    redirect_to root_path if current_user.nil?
+    redirect_to new_user_session_url if current_user.nil?
   end
 
   def like_job_offer
-    user_id = current_user.id
-    user = User.find(user_id)
     job_offer = JobOffer.find_by(id: params[:id])
 
-    user.likes << job_offer if ! user.likes.to_a.include?(job_offer)
+    current_user.likes << job_offer if ! current_user.likes.include?(job_offer)
 
     redirect_back fallback_location: { action: 'show' }
   end
 
+  def dislike_job_offer
+    job_offer = JobOffer.find_by(id: params[:id])
+
+    current_user.likes(:job_offer, :LIKES).match_to(job_offer).delete_all(:LIKES)
+
+    redirect_back fallback_location: { action: 'show' }
+
+  end
 
   def recommended_offers
     query = User.find(current_user.id).query_as(:u)
@@ -39,6 +47,12 @@ class JobOffersController < ApplicationController
     query = query.order_by('score DESC')
 
     query.return('offer, score').map {|r| r.offer}
+  end
+
+  private
+
+  def liked?(user, job_offer)
+    user.likes.to_a.include?(job_offer)
   end
 
 end

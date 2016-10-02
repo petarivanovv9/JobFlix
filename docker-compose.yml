@@ -34,10 +34,10 @@ services:
     env_file:
       - ./gryphon/gryphon.env
 
-  client:
-    build: ./webclient
-    volumes:
-      - ./webclient:/webclient
-    ports:
-      - 8080:8080
-      - 3123:3123
+  # client:
+  #   build: ./webclient
+  #   volumes:
+  #     - ./webclient:/webclient
+  #   ports:
+  #     - 8080:8080
+  #     - 3123:3123

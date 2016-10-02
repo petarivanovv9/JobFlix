@@ -15,6 +15,9 @@ Rails.application.routes.draw do
 
   post '/job_offers/:id/like', to: 'job_offers#like_job_offer'
 
+  post '/job_offers/:id/dislike', to: 'job_offers#dislike_job_offer'
+
+
   # , :identificator => /[^\/]+/
 
 
