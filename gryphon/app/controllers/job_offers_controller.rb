@@ -3,17 +3,15 @@ class JobOffersController < ApplicationController
 
   def index
     @job_offers = JobOffer.all.to_a
+    @job_offers = recommended_offers if current_user
   end
 
   def show
-    # user = User.find(params[:user_id])
     @job_offer = JobOffer.find_by(id: params[:id])
 
-    @similar_offers = JobOffer.all.to_a
+    @similar_offers = recommended_offers
 
     current_user.views << @job_offer if ! current_user.nil? and ! current_user.views.to_a.include?(@job_offer)
-
-    #current_user.views << @job_offer if ! current_user.views.to_a.include?(@job_offer)
   end
 
   def authorize
@@ -31,16 +29,16 @@ class JobOffersController < ApplicationController
   end
 
 
-# MATCH (user:User {email: "pepi@abv.bg" }) - [:LIKES] -> (j)- [:SIMILAR_TO] -> (j2)
-# WHERE NOT (user)-[:LIKES]->(j2)
-# WITH count(j2) as baba,
-# user.email as u,
-# j2.name as name
-# ORDER BY baba DESC
-# RETURN baba, name, u
-
   def recommended_offers
-    offers = a_session.match(u: "User {email: #{current_user.email}}")
+    query = User.find(current_user.id).query_as(:u)
+    query = query.match("(u)-[:LIKES]->(j)-[:SIMILAR_TO]->(j2)")
+
+    query = query.where_not(" (u)-[:LIKES]->(j2)")
+    query = query.with('count(j2) as score', 'j2 as offer')
+
+    query = query.order_by('score DESC')
+
+    query.return('offer, score').map {|r| r.offer}
   end
 
 end
