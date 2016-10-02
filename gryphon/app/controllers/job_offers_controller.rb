@@ -30,4 +30,17 @@ class JobOffersController < ApplicationController
     redirect_back fallback_location: { action: 'show' }
   end
 
+
+# MATCH (user:User {email: "pepi@abv.bg" }) - [:LIKES] -> (j)- [:SIMILAR_TO] -> (j2)
+# WHERE NOT (user)-[:LIKES]->(j2)
+# WITH count(j2) as baba,
+# user.email as u,
+# j2.name as name
+# ORDER BY baba DESC
+# RETURN baba, name, u
+
+  def recommended_offers
+    offers = a_session.match(u: "User {email: #{current_user.email}}")
+  end
+
 end

@@ -25,6 +25,10 @@ body {
 	background-color: #3498db;
 }
 
+.navbar-custome .icon-bar {
+	background-color: #fff;
+}
+
 .navbar-brand {
 	color: #fff;
 	height: 40px;
@@ -83,6 +87,8 @@ body {
 
 .job-offer {
 	margin-top: 1.3em;
+	font-family: inherit;
+	font-size: inherit;
 }
 
 .like-offer {

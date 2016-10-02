@@ -1,9 +1,9 @@
 <div class="row search-bar">
 	<div class="col-md-12">
-		<%= form_tag("/search", method: "get") do %>
+		<%= form_tag("/job_offers", method: "get") do %>
 			<div class="row">
 
-				<div class="col-xs-12">
+				<div class="col-md-12">
 		  			<%= text_field_tag(:q, nil, class: "form-control", placeholder: "Search") %>
 				</div>
 
