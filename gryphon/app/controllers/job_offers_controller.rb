@@ -46,7 +46,11 @@ class JobOffersController < ApplicationController
 
     query = query.order_by('score DESC')
 
-    query.return('offer, score').map {|r| r.offer}
+    recommended = query.return('offer, score').map {|r| r.offer}
+
+    recommended &= JobOffer.all.to_a.sample(30 - recommended.size) if recommended < 30
+
+    recommended
   end
 
   private
