@@ -111,3 +111,11 @@ body {
 .similar-offers h4 {
 	font-size: 16px;
 }
+
+.home-page {
+	margin-top: 80px;
+}
+
+.hero {
+	max-width: 100%;
+}
