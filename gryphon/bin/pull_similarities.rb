@@ -2,7 +2,7 @@ require 'json'
 require 'neo4j'
 
 
-CONNECTION = 'http://neo4j:7474'
+CONNECTION = ENV['NEO4J_URL']
 
 file = File.read('connections.json')
 

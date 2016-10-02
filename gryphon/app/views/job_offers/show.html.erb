@@ -18,10 +18,14 @@
 		<% end %>
 
 		<pre class="job-desc"><%= @job_offer.description.strip %></pre>
+
+		<h3>Similar offers</h3>
+		<%= render partial: 'offer_list', locals: {job_offers: @similar}%>
+
 	</div>
 
 	<div class="col-md-3 similar-offers">
-		<h3>Similar offers</h3>
-		<%= render partial: 'offer_list', locals: {job_offers: @similar_offers}%>
+		<h3>Recommended offers</h3>
+		<%= render partial: 'offer_list', locals: {job_offers: @recommended}%>
 	</div>
 </div>

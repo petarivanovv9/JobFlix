@@ -8,7 +8,7 @@ puts
 
 SIZE_JOBS = 20
 JOB_END_RESULT = 'id'
-CONNECTION = 'http://neo4j:7474'
+CONNECTION = ENV['NEO4J_URL']
 
 
 client = Elasticsearch::Client.new host: 'http://elasticsearch:9200'
@@ -82,7 +82,6 @@ def make_all_connections(jobs, rec)
   jobs.each do |job|
     connections[job.n.id] = rec.find_matching_jobs(job.n.id)
   end
-  byebug
   connections
 end
 

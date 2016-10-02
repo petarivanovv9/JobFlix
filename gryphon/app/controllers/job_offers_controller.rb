@@ -9,7 +9,8 @@ class JobOffersController < ApplicationController
   def show
     @job_offer = JobOffer.find_by(id: params[:id])
 
-    @similar_offers = recommended_offers
+    @recommended = recommended_offers
+    @similar = similar_offers(@job_offer)
 
     current_user.views << @job_offer if ! current_user.nil? and ! current_user.views.include?(@job_offer)
 
@@ -48,9 +49,14 @@ class JobOffersController < ApplicationController
 
     recommended = query.return('offer, score').map {|r| r.offer}
 
-    recommended |= JobOffer.all.to_a.sample(30 - recommended.size) if recommended.size < 30
+    random = []
+    random = (JobOffer.all.to_a - recommended).sample(50 - recommended.size) if recommended.size < 30
 
-    recommended
+    recommended + random
+  end
+
+  def similar_offers(job_offer)
+    job_offer.similarities.to_a
   end
 
   private
