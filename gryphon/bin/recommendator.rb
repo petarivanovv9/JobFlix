@@ -70,7 +70,7 @@ class ElasticJobs
   end
 end
 
-client.indices.delete(index: 'jobs')
+client.indices.delete(index: 'jobs') if client.indices.exists(index: 'jobs')
 ElasticJobs.make_jobs(client)
 rec = Recommendator.new(client)
 neo4j_session = Neo4j::Session.open(:server_db, CONNECTION)
