@@ -1,0 +1,121 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+	margin-top: 40px;
+	background-color: #f4f4f6;
+}
+
+.navbar-custome {
+	min-height: 40px;
+	color: #fff;
+	background-color: #3498db;
+}
+
+.navbar-custome .icon-bar {
+	background-color: #fff;
+}
+
+.navbar-brand {
+	color: #fff;
+	height: 40px;
+	padding: 10px 15px;
+	font-weight: bold;
+	font-size: 25px;
+}
+
+.navbar-custome li > a {
+	color: #fff;
+	padding-top: 10px;
+	padding-bottom: 0;
+}
+
+.navbar-custome li > a:hover {
+	background-color: transparent;
+}
+
+.search-bar {
+	padding-top: 15px;
+	background-color: #2a333c;
+}
+
+.search-bar input,  .search-bar select{
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 0;
+    margin: 0 0 20px;
+    padding: 5px;
+    padding-left: 15px;
+    font-size: 1em;
+    display: block;
+    width: 100%;
+    outline: 0;
+}
+
+.media-list li {
+	background-color: #fff;
+	margin-top: 7px;
+	padding: 5px;
+	box-shadow: 0 2px 4px #ccc;
+}
+
+.media-list li:hover {
+	box-shadow: 0 2px 0 #ccc;
+}
+
+.job-desc {
+	border: none;
+	background-color: #fff;
+	box-shadow: 0 4px 4px #aaa;
+	border-radius: 0;
+
+}
+
+.job-offer {
+	margin-top: 1.3em;
+	font-family: inherit;
+	font-size: inherit;
+}
+
+.like-offer {
+	background-color: #3498db;
+	color: #fff;
+	font-size: 1.3em;
+	padding: 5px;
+	font-weight: bold;
+	box-shadow: 0 4px 4px #aaa;
+	width: 100%;
+	display: block;
+	text-align: center;
+	margin-top: 25px;
+}
+
+.like-offer:hover {
+	color: #fff;
+}
+
+.similar-offers h4 {
+	font-size: 16px;
+}
+
+.home-page {
+	margin-top: 80px;
+}
+
+.hero {
+	max-width: 100%;
+}

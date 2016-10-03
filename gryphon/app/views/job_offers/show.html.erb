@@ -1,0 +1,31 @@
+<div class="job-offer">
+	<div class="col-md-9">
+		<h1>
+		  <%= @job_offer.name %>
+		</h1>
+
+
+		<% if user_signed_in? %>
+			<% if ! @is_liked %>
+		  		<%= link_to 'Like',
+		      	{:controller => :job_offers, :action => :like_job_offer,
+		       	:id => @job_offer.id}, {:method => :post, class: "like-offer"} %>
+			<% else %>
+		 		<%= link_to 'Dislike',
+		 	    	{:controller => :job_offers, :action => :dislike_job_offer,
+		 	     	:id => @job_offer.id}, {:method => :post, class: "like-offer"} %>
+			<% end %>
+		<% end %>
+
+		<pre class="job-desc"><%= @job_offer.description.strip %></pre>
+
+		<h3>Similar offers</h3>
+		<%= render partial: 'offer_list', locals: {job_offers: @similar}%>
+
+	</div>
+
+	<div class="col-md-3 similar-offers">
+		<h3>Recommended offers</h3>
+		<%= render partial: 'offer_list', locals: {job_offers: @recommended}%>
+	</div>
+</div>

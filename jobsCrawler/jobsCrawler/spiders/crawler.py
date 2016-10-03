@@ -1,0 +1,116 @@
+import re
+import scrapy
+import html2text
+
+STARTING = 'https://www.jobs.bg/front_job_search.php?first_search=1&is_region&cities[0]=1&categories[0]=15&all_type=0&all_position_level=1&all_company_type=1&keyword'
+
+NEXT_URL = "https://www.jobs.bg/front_job_search.php?frompage={}&is_region=&cities%5B0%5D=1&categories%5B0%5D=15&all_type=0&all_position_level=1&all_company_type=1&keyword=#paging"
+
+NEXT_URL_2 = "https://www.jobs.bg/front_job_search.php?frompage={}&is_region=&cities%5B%5D=1&categories%5B%5D=20&all_type=0&all_position_level=1&all_company_type=1&keyword=#paging"
+
+STEP = 15
+
+
+class GryphoncrawlSpider(scrapy.Spider):
+
+    # Enumerator for the main pages
+    @staticmethod
+    def pages_enumerator():
+        yield STARTING
+        current_jobs_number = STEP
+        while True:
+            # yield NEXT_URL.format(current_jobs_number)
+            yield NEXT_URL_2.format(current_jobs_number)
+            current_jobs_number += STEP
+
+    name = "crawler"
+    domain = 'https://www.jobs.bg/'
+    # start_urls = [STARTING]
+    start_urls = pages_enumerator.__func__()
+
+    # Goes through main pages and job pages
+    def parse(self, response):
+        # Gets all jobs on the page.
+        job_urls = self.get_job_urls(response)
+
+        if not job_urls:
+            print("HEEEEEEEEERE")
+            handler = HTMLHandler(response)
+            yield handler.process_job()
+
+        # Enters here if on main pages
+        while job_urls:
+            job_url = type(self).domain + job_urls.pop(0)
+            yield scrapy.Request(job_url, callback=self.parse)
+
+    def get_job_urls(self, response):
+        job_urls = []
+        for job in response.css('a.joblink'):
+            job_urls.append(job.css("a::attr(href)").extract()[0])
+        return job_urls
+
+"""    def process_job(self, response):
+        data = {}
+        job_title = response.xpath('//td[@class="jobTitle"]/text()').extract(
+        ) or response.xpath('//h1[@class="catent"]/text()').extract()
+        data['title'] = job_title
+        for field in FIELDS_SMALL:
+            if field[0] != "company":
+                row = response.xpath(
+                    "//tr[contains(td, '{}')]".format(field[1]))[-1]
+                row = converter.handle(row.css("td")[-1].extract())
+            else:
+                row = response.xpath("//td/a/b/text()").extract()[0]
+
+            data[field[0]] = row
+        return data
+"""
+
+class HTMLHandler:
+
+    COMPANY = ['company', 'Организация']
+    FIELDS = [['description', 'Описание'],
+              ['place', 'Месторабота']]
+    FIELDS_SMALL = [['publicated', 'Дата'],
+                    ['category', 'Категория'],
+                    ['type', 'Вид работа'],
+                    ['level', 'Ниво'],
+                    ['busy', 'Вид заетост']] + FIELDS
+
+    def __init__(self, response):
+        self.response = response
+        self.converter = html2text.HTML2Text()
+
+    def title(self):
+        return self.response.xpath('//td[@class="jobTitle"]/text()').extract() or self.response.xpath('//h1[@class="catent"]/text()').extract()
+
+    def company(self):
+        return self.response.xpath("//td/a/b/text()").extract()[0]
+
+    def process_job(self):
+        data = {}
+        data['title'] = self.title()
+        data['company'] = self.company()
+        for field in HTMLHandler.FIELDS_SMALL:
+            row = self.response.xpath("//tr[contains(td, '{}')]"
+                                      .format(field[1]))[-1]
+            field_info = self.converter.handle(row.css("td")[-1].extract())
+            if field[0] == 'category':
+                field_info = CategorySplitter.split_categories(field_info)
+            data[field[0]] = field_info
+        data['url'] = self.response.url
+        return data
+
+
+class CategorySplitter:
+
+    REGEX = "\* (.*?)(,|$)"
+
+    @staticmethod
+    def split_categories(categories):
+        processed_categories = []
+        for category in categories.splitlines():
+            processed = re.search(CategorySplitter.REGEX, category)
+            if processed:
+                processed_categories.append(processed.group(1))
+        return processed_categories

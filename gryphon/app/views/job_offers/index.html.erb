@@ -1,0 +1,12 @@
+
+<%= render partial: 'shared/search'%>
+
+<h3>
+  Recommended for you
+</h3>
+
+<div class="col-md-9">
+	<%= render partial: 'offer_list', locals: {job_offers: @job_offers}%>
+</div>
+
+
