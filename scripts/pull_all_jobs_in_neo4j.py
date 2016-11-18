@@ -61,7 +61,9 @@ for job in all_jobs:
 # Neo4j - Cypher
 #
 
+# driver = GraphDatabase.driver("bolt://46.101.245.130:7687", auth=basic_auth("neo4j", "neo4j"))
 driver = GraphDatabase.driver("bolt://localhost:7687", auth=basic_auth("neo4j", "neo4j"))
+
 session = driver.session()
 
 # session.run("MATCH (n) OPTIONAL MATCH (n)-[r]-() DELETE n,r")
@@ -117,7 +119,7 @@ for key, job in all_jobs_unique.items():
         }
     )
 
-try:
- session.close()
-except Exception as dick:
- print(dick)
+# try:
+session.close()
+# except Exception as dick:
+#  print(dick)
